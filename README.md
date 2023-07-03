@@ -22,12 +22,11 @@ To get started with the Hacking Tools Script repository, follow these steps:
 
 1. Clone the repository to your local machine using the following command:
 2. git clone https://github.com/hackerwhale/hacking-tools-script.git
-3. 
-2. Explore the different directories within the repository to find scripts that interest you. Each script directory contains a README file with detailed instructions on how to use the script effectively.
+3.  Explore the different directories within the repository to find scripts that interest you. Each script directory contains a README file with detailed instructions on how to use the script effectively.
 
-3. Review the documentation provided for each script to understand its purpose, dependencies, and usage examples.
+4. Review the documentation provided for each script to understand its purpose, dependencies, and usage examples.
 
-4. Before executing any script, make sure to adhere to ethical guidelines and use the tools responsibly and legally.
+5. Before executing any script, make sure to adhere to ethical guidelines and use the tools responsibly and legally.
 
 ### Free Cybersecurity eBooks
 
