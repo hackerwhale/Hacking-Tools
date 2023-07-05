@@ -1,3 +1,4 @@
+#Crack SHA256 password hash.
 from pwn import *
 import sys 
 
