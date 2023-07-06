@@ -1,39 +1,39 @@
+# This is a TCP server implementation
+
 import socket
 import threading
 
+# Set the IP address and port to listen on
 bind_ip = "0.0.0.0"
 bind_port = 9999
 
+# Create a socket object
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Bind the socket to the IP address and port
 server.bind((bind_ip, bind_port))
+
+# Start listening for incoming connections
 server.listen(5)
+
+# Print a message indicating the server is listening
 print("[*] Listening on %s:%d" % (bind_ip, bind_port))
 
-# this is our client-handling thread
+# Define the function to handle each client connection
 def handle_client(client_socket):
-    # print out what the client sends
+    # Receive data from the client
     request = client_socket.recv(1024)
     print("[*] Received: %s" % request.decode())
-    # send back a packet
+    
+    # Send a response back to the client
     client_socket.send("ACK!".encode())
     client_socket.close()
 
+# Accept and handle incoming connections
 while True:
     client, addr = server.accept()
     print("[*] Accepted connection from: %s:%d" % (addr[0], addr[1]))
-    # spin up our client thread to handle incoming data
+    
+    # Start a new thread to handle the client
     client_handler = threading.Thread(target=handle_client, args=(client,))
     client_handler.start()
-
-"""
-
-
-Certainly! The provided Python code sets up a TCP server that listens on IP address "0.0.0.0" and port 9999. It creates a socket object, binds it to the specified IP address and port, and starts listening for incoming connections.
-
-When a client connects to the server, a separate thread is created to handle the client. The handle_client function is responsible for receiving data from the client, printing it out, and sending an "ACK!" message back to the client. The received data is printed, and the "ACK!" message is sent as a response. Finally, the client socket is closed.
-
-The server continuously listens for incoming connections in a loop. Each time a connection is accepted, it prints the client's IP address and port, and spawns a new thread to handle the client. This allows the server to handle multiple client connections concurrently.
-
-Overall, the code demonstrates a basic TCP server implementation using socket programming in Python, utilizing threading to handle multiple client connections simultaneously.
-
-""""
