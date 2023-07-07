@@ -2,7 +2,7 @@
 import socket
 
 # Define the target host and port
-target_host = "www.google.com"
+target_host = "www.example.com"
 target_port = 80
 
 # Create a socket object
@@ -22,3 +22,5 @@ response = client.recv(4096)
 
 # Print the response after decoding it from bytes to a string
 print(response.decode())
+
+
